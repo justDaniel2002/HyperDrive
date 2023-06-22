@@ -39,12 +39,43 @@ public class playerControl : MonoBehaviour
                 rbd.velocity = Vector2.right * moveSpeed;
             }
         }
-        else
+        /*else
+        {
+            if (rbd)
+            {
+                rbd.velocity = Vector2.zero;
+            }
+        }*/
+
+        if (GamepadController.Ins.CanMoveForward)
+        {
+            if (rbd)
+            {
+                rbd.velocity = Vector2.up * moveSpeed;
+            }
+        }
+
+        else if (GamepadController.Ins.CanMoveBack)
+        {
+            if (rbd)
+            {
+                rbd.velocity = Vector2.down * moveSpeed;
+            }
+        }
+
+        if (!GamepadController.Ins.CanMove)
         {
             if (rbd)
             {
                 rbd.velocity = Vector2.zero;
             }
         }
+        /*else
+        {
+            if (rbd)
+            {
+                rbd.velocity = Vector2.zero;
+            }
+        }*/
     }
 }
