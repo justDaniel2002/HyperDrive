@@ -6,6 +6,9 @@ public class playerControl : MonoBehaviour
 {
     public bool isDead=false;
     public float moveSpeed;
+    public double limitXLeft = -7.26;
+    public double limitXright = 0.87;
+    public double limitY = 6.04;
 
     Rigidbody2D rbd;
 
@@ -77,5 +80,23 @@ public class playerControl : MonoBehaviour
                 rbd.velocity = Vector2.zero;
             }
         }*/
+
+        if(transform.position.x <= limitXLeft)
+        {
+            transform.position = new Vector3((float)limitXLeft, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.x >= limitXright)
+        {
+            transform.position = new Vector3((float)limitXright, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.y >= limitY)
+        {
+            transform.position = new Vector3(transform.position.x, (float)limitY, transform.position.z);
+        } else if (transform.position.y <= -limitY)
+        {
+            transform.position = new Vector3(transform.position.x, (float)-limitY, transform.position.z);
+        }
     }
 }
