@@ -36,6 +36,7 @@ public class bgloop : MonoBehaviour
             road1.position = new Vector3(road2.position.x, road2.position.y + _ySize, 0f);
 
             Transform temp = road1;
+            road1 = road2;
             road2 = temp;
         }
     }
