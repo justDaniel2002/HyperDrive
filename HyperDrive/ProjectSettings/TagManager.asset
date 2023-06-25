@@ -39,6 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3745224919
+    locked: 0
+  - name: ForceGround
+    uniqueID: 70273851
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3179981105
+    locked: 0
+  - name: Player
+    uniqueID: 679084639
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
