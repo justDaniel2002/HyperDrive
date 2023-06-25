@@ -12,11 +12,11 @@ public class bgloop : MonoBehaviour
 
     private void Awake()
     {
-        _ySize = road1.GetComponent<BoxCollider2D>().size.y * road1.transform.localScale.y;
+        _ySize = road1.GetComponent<BoxCollider2D>().size.y * road1.localScale.y;
 
-        road1.transform.position = Vector3.zero;
+        road1.position = Vector3.zero;
 
-        road2.transform.position = new Vector3(road1.transform.position.x, road1.transform.position.y + _ySize, 0f);
+        road2.position = new Vector3(road1.position.x, road1.position.y + _ySize, 0f);
     }
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,16 @@ public class bgloop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isStart) return;
+
+        transform.Translate(Vector3.down * speed * Time.deltaTime);
+
+        if(road1.position.y<= -_ySize)
+        {
+            road1.position = new Vector3(road2.position.x, road2.position.y + _ySize, 0f);
+
+            Transform temp = road1;
+            road2 = temp;
+        }
     }
 }
