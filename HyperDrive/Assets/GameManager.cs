@@ -2,17 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    public float minSpawnTime;
+    public float maxSpawnTime;
+    public GameObject[] obstacles;
+    public GameObject player;
+    public bgloop bgloop;
+    public bool isGameOver;
+    public bool isGamePlay;
+    private int score;
+
+    public override void Awake()
     {
-        
+        MakeSingleton(false);
+    }
+    // Start is called before the first frame update
+    public override void Start()
+    {
+        base.Start();
+
+        StartCoroutine(SpawnObstacle());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator SpawnObstacle()
+    {
+        while (!isGameOver)
+        {
+            float spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+
+            yield return new WaitForSeconds(spawnTime);
+
+            if (obstacles != null&&obstacles.Length>0)
+            {
+                int obIndex = Random.Range(0, obstacles.Length);
+
+                GameObject obstacle = obstacles[obIndex];
+
+                if (obstacle)
+                {
+                    Vector3 spawnPos = new Vector3( Random.Range(-5f, 5f), 8f, 0f);
+                    Instantiate(obstacle, spawnPos, obstacle.transform.rotation);
+                }
+            }
+        }
     }
 }
