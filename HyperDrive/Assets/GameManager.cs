@@ -47,7 +47,13 @@ public class GameManager : Singleton<GameManager>
 
                 if (obstacle)
                 {
-                    Vector3 spawnPos = new Vector3( Random.Range(-5f, 5f), 8f, 0f);
+                    Vector3 spawnPos = new Vector3(Random.Range(-4f, -1f), 8f, 0f);
+                    ObstacleControllerV1 controller = obstacle.GetComponent<ObstacleControllerV1>();
+                    if (!controller.isFaceFront)
+                    {
+                        spawnPos = new Vector3(Random.Range(0f, 4f), -8f, 0f);
+                    }
+                    
                     Instantiate(obstacle, spawnPos, obstacle.transform.rotation);
                 }
             }
