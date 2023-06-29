@@ -27,6 +27,7 @@ public class playerControl : MonoBehaviour
     {
         if (isDead) return;
 
+        //set up moving
         if (GamepadController.Ins.CanMoveLeft)
         {
             if (rbd)
@@ -67,6 +68,7 @@ public class playerControl : MonoBehaviour
             }
         }
 
+        //set up moving limit
         if (transform.position.x <= limitXLeft)
         {
             transform.position = new Vector3((float)limitXLeft, transform.position.y, transform.position.z);
@@ -84,6 +86,18 @@ public class playerControl : MonoBehaviour
         else if (transform.position.y <= -limitY)
         {
             transform.position = new Vector3(transform.position.x, (float)-limitY, transform.position.z);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(Const.OBSTACLE_TAG))
+        {
+            gameObject.SetActive(false);
+            collision.gameObject.SetActive(false);
+
+            isDead = true;
         }
     }
 }
