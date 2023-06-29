@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3432214228065055532}
   - component: {fileID: 1973546791338278819}
   - component: {fileID: 1707490132829928051}
+  - component: {fileID: 8411154923927713436}
   m_Layer: 0
   m_Name: EmergencyCar
   m_TagString: Obstacle
@@ -101,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -123,3 +124,17 @@ CapsuleCollider2D:
   m_Offset: {x: -3.8228265e-17, y: 0.012934921}
   m_Size: {x: 3.3333347, y: 1.0954508}
   m_Direction: 1
+--- !u!114 &8411154923927713436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745549346620403600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9bc6b108b5a804b9d722f2407891f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  isFaceFront: 0

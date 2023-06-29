@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4180538545723211360}
   - component: {fileID: 2183111165184170837}
   - component: {fileID: 6443749207204128112}
+  - component: {fileID: 2948024073402384919}
   m_Layer: 0
   m_Name: PolicleCar
   m_TagString: Obstacle
@@ -123,3 +124,17 @@ CapsuleCollider2D:
   m_Offset: {x: -7.128656e-18, y: 0.01612663}
   m_Size: {x: 1.8285719, y: 0.7981089}
   m_Direction: 1
+--- !u!114 &2948024073402384919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089606511857974621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9bc6b108b5a804b9d722f2407891f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  isFaceFront: 1
