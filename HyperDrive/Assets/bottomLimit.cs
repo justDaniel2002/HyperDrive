@@ -15,4 +15,12 @@ public class bottomLimit : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals(Const.OBSTACLE_TAG))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
