@@ -9,6 +9,7 @@ public class playerControl : MonoBehaviour
     public double limitXLeft = -4;
     public double limitXright = 4;
     public double limitY = 6.04;
+    public GameObject explosionVFX;
 
     Rigidbody2D rbd;
 
@@ -98,6 +99,8 @@ public class playerControl : MonoBehaviour
             collision.gameObject.SetActive(false);
 
             isDead = true;
+
+            Instantiate(explosionVFX, transform.position, Quaternion.identity);
         }
     }
 }
