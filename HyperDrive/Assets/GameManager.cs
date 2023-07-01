@@ -11,7 +11,9 @@ public class GameManager : Singleton<GameManager>
     public bgloop bgloop;
     public bool isGameOver;
     public bool isGamePlay;
-    private int score;
+    private int _score;
+
+    public int Score { get => _score; set => _score = value; }
 
     public override void Awake()
     {

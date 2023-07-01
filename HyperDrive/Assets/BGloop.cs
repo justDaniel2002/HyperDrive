@@ -38,6 +38,9 @@ public class bgloop : MonoBehaviour
             Transform temp = road1;
             road1 = road2;
             road2 = temp;
+
+            GameManager.Ins.Score++;
+            Debug.Log(GameManager.Ins.Score);
         }
     }
 }
