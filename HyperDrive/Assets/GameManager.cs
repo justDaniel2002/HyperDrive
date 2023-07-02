@@ -24,13 +24,48 @@ public class GameManager : Singleton<GameManager>
     {
         base.Start();
 
-        StartCoroutine(SpawnObstacle());
+        GameUIManager.Ins.ShowGameUI(false);
+        GameUIManager.Ins.UpdateScoreCounting(_score);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void PlayGame()
+    {
+        GameUIManager.Ins.homeUi.SetActive(false);
+        StartCoroutine(CountingDown());
+    }
+
+    IEnumerator CountingDown()
+    {
+        float time = 3f;
+
+        GameUIManager.Ins.UpdateTimeCounting(time);
+
+        while (time > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            time--;
+            GameUIManager.Ins.UpdateTimeCounting(time);
+        }
+
+        isGamePlay = true;
+
+        if (player)
+        {
+            player.SetActive(true);
+        }
+        if (bgloop)
+        {
+            bgloop.isStart = true;
+        }
+
+        StartCoroutine(SpawnObstacle());
+        GameUIManager.Ins.ShowGameUI(true);
     }
 
     IEnumerator SpawnObstacle()

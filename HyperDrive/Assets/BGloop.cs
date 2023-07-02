@@ -40,6 +40,7 @@ public class bgloop : MonoBehaviour
             road2 = temp;
 
             GameManager.Ins.Score++;
+            GameUIManager.Ins.UpdateScoreCounting(GameManager.Ins.Score);
             Debug.Log(GameManager.Ins.Score);
         }
     }
