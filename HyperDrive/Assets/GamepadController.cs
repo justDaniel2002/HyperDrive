@@ -45,6 +45,8 @@ public class GamepadController : Singleton<GamepadController>
     // Update is called once per frame
     void Update()
     {
+
         PCInputHandle();
+        _canMove = !_canMoveBack && !_canMoveForward && !_canMoveLeft && !_canMoveRight ? false : true;
     }
 }

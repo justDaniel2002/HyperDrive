@@ -15,4 +15,15 @@ public class PauseDialog : MonoBehaviour
     {
         
     }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        gameObject.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

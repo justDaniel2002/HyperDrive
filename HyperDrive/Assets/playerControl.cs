@@ -26,7 +26,7 @@ public class playerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDead) return;
+        if (isDead || !GameManager.Ins.isGamePlay) return;
 
         //set up moving
         if (GamepadController.Ins.CanMoveLeft)
