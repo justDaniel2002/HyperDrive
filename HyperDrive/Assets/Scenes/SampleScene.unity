@@ -1110,7 +1110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.59, y: 0.13, z: -10}
+  m_LocalPosition: {x: -0.1, y: 0.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1347,10 +1347,10 @@ MonoBehaviour:
   musicAus: {fileID: 573853133}
   soundAus: {fileID: 573853132}
   backgroubdMusics:
-  - {fileID: 8300000, guid: eb5fdf66ec0d6df4182301a8e330c283, type: 3}
-  - {fileID: 8300000, guid: eb5fdf66ec0d6df4182301a8e330c283, type: 3}
-  - {fileID: 8300000, guid: eb5fdf66ec0d6df4182301a8e330c283, type: 3}
-  explosionSound: {fileID: 8300000, guid: 160c4d8e251a6774cb66c96dd7f9cdf9, type: 3}
+  - {fileID: 8300000, guid: da5a49e5f15125e46a9920b9bf3c1c13, type: 3}
+  - {fileID: 8300000, guid: 2c3c5187f27b6934c8f6ca2ce0d684d7, type: 3}
+  - {fileID: 8300000, guid: 94e56f904d85f244188430b225c7717f, type: 3}
+  explosionSound: {fileID: 8300000, guid: 726793d891a45774393d2c4ff0de9add, type: 3}
   countingSound: {fileID: 8300000, guid: bf8fb0a0e5c077c42892740d8fefa1b4, type: 3}
 --- !u!4 &573853135
 Transform:
@@ -2586,7 +2586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -375, y: 306}
+  m_AnchoredPosition: {x: -501.89, y: 306}
   m_SizeDelta: {x: 387.9, y: 96.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349945535
@@ -3340,8 +3340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 160.67468, y: 0}
-  m_SizeDelta: {x: -321.35052, y: 0}
+  m_AnchoredPosition: {x: 25.434814, y: 0}
+  m_SizeDelta: {x: -50.87043, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1736564313
 CanvasRenderer:
@@ -4249,11 +4249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8539727483920524807, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.97
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 8539727483920524807, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.78
+      value: -2.39
       objectReference: {fileID: 0}
     - target: {fileID: 8539727483920524807, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
       propertyPath: m_LocalPosition.z

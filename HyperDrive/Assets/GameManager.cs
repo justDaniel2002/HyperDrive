@@ -44,6 +44,8 @@ public class GameManager : Singleton<GameManager>
     {
         float time = 3f;
 
+        AudioController.Ins.PlayCountingSound();
+
         GameUIManager.Ins.UpdateTimeCounting(time);
 
         while (time > 0)
@@ -99,6 +101,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
+        AudioController.Ins.StopMusic();
         isGameOver = true;
         isGamePlay = false;
         Prefs.BestScore = Score;

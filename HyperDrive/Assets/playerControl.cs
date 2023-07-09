@@ -95,6 +95,7 @@ public class playerControl : MonoBehaviour
     {
         if (collision.CompareTag(Const.OBSTACLE_TAG))
         {
+            AudioController.Ins.PlayExlodeSound();
             gameObject.SetActive(false);
             collision.gameObject.SetActive(false);
 

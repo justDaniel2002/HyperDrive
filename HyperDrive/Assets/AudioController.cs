@@ -39,6 +39,8 @@ public class AudioController : Singleton<AudioController>
             if (backgroubdMusics[randIdx])
             {
                 musicAus.clip = backgroubdMusics[randIdx];
+                musicAus.volume = musicVol;
+                musicAus.Play();
             }
         }
     }
@@ -47,6 +49,7 @@ public class AudioController : Singleton<AudioController>
     {
         if(soundAus && sound)
         {
+            soundAus.volume = soundVol;
             soundAus.PlayOneShot(sound);
         }
     }
@@ -57,5 +60,15 @@ public class AudioController : Singleton<AudioController>
         {
             musicAus.Stop();
         }
+    }
+
+    public void PlayCountingSound()
+    {
+        PlaySound(countingSound);
+    }
+
+    public void PlayExlodeSound()
+    {
+        PlaySound(explosionSound);
     }
 }
