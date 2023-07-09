@@ -21,12 +21,41 @@ public class AudioController : Singleton<AudioController>
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayBackgroundMusis();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void PlayBackgroundMusis()
+    {
+        if(musicAus && backgroubdMusics != null && backgroubdMusics.Length > 0)
+        {
+            int randIdx = Random.Range(0, backgroubdMusics.Length);
+
+            if (backgroubdMusics[randIdx])
+            {
+                musicAus.clip = backgroubdMusics[randIdx];
+            }
+        }
+    }
+
+    public void PlaySound(AudioClip sound)
+    {
+        if(soundAus && sound)
+        {
+            soundAus.PlayOneShot(sound);
+        }
+    }
+
+    public void StopMusic()
+    {
+        if (musicAus)
+        {
+            musicAus.Stop();
+        }
     }
 }
