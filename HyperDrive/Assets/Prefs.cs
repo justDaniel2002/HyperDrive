@@ -8,7 +8,7 @@ public class Prefs
     {
         set
         {
-            if(PlayerPrefs.GetInt(Const.BEST_SCORE_KEY, 0) > value)
+            if(PlayerPrefs.GetInt(Const.BEST_SCORE_KEY, 0) < value)
             {
                 PlayerPrefs.SetInt(Const.BEST_SCORE_KEY, value);
             }

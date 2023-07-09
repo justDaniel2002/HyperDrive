@@ -101,6 +101,8 @@ public class playerControl : MonoBehaviour
             isDead = true;
 
             Instantiate(explosionVFX, transform.position, Quaternion.identity);
+
+            GameManager.Ins.GameOver();
         }
     }
 }

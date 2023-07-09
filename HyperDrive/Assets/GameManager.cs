@@ -96,4 +96,12 @@ public class GameManager : Singleton<GameManager>
             }
         }
     }
+
+    public void GameOver()
+    {
+        isGameOver = true;
+        isGamePlay = false;
+        Prefs.BestScore = Score;
+        GameUIManager.Ins.gameOverDialog.SetActive(true);
+    }
 }
