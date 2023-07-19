@@ -9,6 +9,8 @@ public class bgloop : MonoBehaviour
     public Transform road2;
     float _ySize;
     public bool isStart;
+    public float timeSpan;
+    public float delay;
 
     private void Awake()
     {
@@ -28,6 +30,14 @@ public class bgloop : MonoBehaviour
     void Update()
     {
         if (!isStart) return;
+
+        timeSpan += Time.deltaTime;
+
+        if (timeSpan > delay)
+        {
+            speed = speed + 5;
+            timeSpan = 0;
+        }
 
         transform.Translate(Vector3.down * speed * Time.deltaTime);
 
