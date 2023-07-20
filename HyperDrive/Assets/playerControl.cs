@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerControl : MonoBehaviour
 {
     public bool isDead=false;
+    public bool isSheid = false;
     public float moveSpeed;
     public double limitXLeft = -4;
     public double limitXright = 4;
@@ -12,10 +13,12 @@ public class playerControl : MonoBehaviour
     public GameObject explosionVFX;
 
     Rigidbody2D rbd;
+    Animator animator;
 
     private void Awake()
     {
         rbd = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponent<Animator>();
     }
     // Start is called before the first frame update
     void Start()
@@ -95,6 +98,12 @@ public class playerControl : MonoBehaviour
     {
         if (collision.CompareTag(Const.OBSTACLE_TAG))
         {
+            if (isSheid)
+            {
+                isSheid = false;
+                animator.SetBool("isSheild", isSheid);
+                return;
+            }
             AudioController.Ins.PlayExlodeSound();
             gameObject.SetActive(false);
             collision.gameObject.SetActive(false);
@@ -104,6 +113,14 @@ public class playerControl : MonoBehaviour
             Instantiate(explosionVFX, transform.position, Quaternion.identity);
 
             GameManager.Ins.GameOver();
+        }
+
+        if (collision.CompareTag(Const.ITEM_TAG))
+        {
+
+            isSheid = true;
+            animator.SetBool("isSheild", isSheid);
+            collision.gameObject.SetActive(false);
         }
     }
 }
