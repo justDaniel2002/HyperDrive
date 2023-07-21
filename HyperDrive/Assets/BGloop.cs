@@ -36,6 +36,7 @@ public class bgloop : MonoBehaviour
         if (timeSpan > delay)
         {
             speed = speed + 5;
+            Const.OBSTACLE_ADD_SPEED += 2;
             timeSpan = 0;
         }
 

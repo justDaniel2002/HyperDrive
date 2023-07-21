@@ -16,7 +16,7 @@ public class ObstacleControllerV1 : MonoBehaviour
     }
     void Start()
     {
-        
+        speed = speed + Const.OBSTACLE_ADD_SPEED;
     }
 
     // Update is called once per frame

@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9bc6b108b5a804b9d722f2407891f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   isFaceFront: 0
+  timeSpan: 0
+  delay: 0
 --- !u!70 &5281097916470723137
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
