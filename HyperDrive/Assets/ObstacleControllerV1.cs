@@ -7,6 +7,8 @@ public class ObstacleControllerV1 : MonoBehaviour
     public float speed;
     Rigidbody2D rb;
     public bool isFaceFront;
+    public float timeSpan;
+    public float delay;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -26,5 +28,7 @@ public class ObstacleControllerV1 : MonoBehaviour
 
             else if(!isFaceFront) rb.velocity = Vector2.up * speed;
         }
+
+
     }
 }

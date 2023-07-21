@@ -22,11 +22,18 @@ public class itemHolder : MonoBehaviour
             {
                 spawnRate += Time.deltaTime;
             }
-            if(spawnRate > spawnTime)
+            else if(spawnRate > spawnTime)
             {
-                Vector3 spawnPos = new Vector3(Random.Range(-4f, 0f), 8f, 0f);
-                Instantiate(item, spawnPos, gameObject.transform.rotation);
                 spawnRate = 0;
+                int percent = Random.Range(0, 5);
+                Debug.Log("percent: " + percent);
+                if (percent == 1)
+                {
+                    Debug.Log("percent: " + percent);
+                    Vector3 spawnPos = new Vector3(Random.Range(-4f, 0f), 8f, -8f);
+                    Instantiate(item, spawnPos, gameObject.transform.rotation);
+                    
+                }
             }
         }
     }

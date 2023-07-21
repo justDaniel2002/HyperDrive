@@ -120,7 +120,7 @@ public class playerControl : MonoBehaviour
 
             isSheid = true;
             animator.SetBool("isSheild", isSheid);
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
         }
     }
 }

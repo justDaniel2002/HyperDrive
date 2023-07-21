@@ -16,5 +16,9 @@ public class itemController : MonoBehaviour
     void Update()
     {
         rgb.velocity = Vector2.down * speed;
+        if (gameObject.transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
