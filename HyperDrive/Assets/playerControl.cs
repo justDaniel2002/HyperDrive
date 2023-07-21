@@ -6,6 +6,7 @@ public class playerControl : MonoBehaviour
 {
     public bool isDead=false;
     public bool isSheid = false;
+    public bool isArmed = false;
     public float moveSpeed;
     public double limitXLeft = -4;
     public double limitXright = 4;
@@ -117,10 +118,19 @@ public class playerControl : MonoBehaviour
 
         if (collision.CompareTag(Const.ITEM_TAG))
         {
-
-            isSheid = true;
-            animator.SetBool("isSheild", isSheid);
-            Destroy(collision.gameObject);
+            int itemType = Random.Range(0, 1);
+            if (itemType==0)
+            {
+                isSheid = true;
+                animator.SetBool("isSheild", isSheid);
+                Destroy(collision.gameObject);
+            }else if (itemType == 1)
+            {
+                isArmed = true;
+                animator.SetBool("isArmed", isArmed);
+                Destroy(collision.gameObject);
+            }
+            
         }
     }
 }
