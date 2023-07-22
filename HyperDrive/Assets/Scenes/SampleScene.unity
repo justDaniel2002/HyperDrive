@@ -4374,16 +4374,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8539727483920524827, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2577874591977068500, guid: 2c6d1c4c680f411459feb2d7ff97eb20, type: 3}
+    - target: {fileID: 8539727483920524827, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
+      propertyPath: shootDelay
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539727483920524827, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
       propertyPath: explosionVFX
       value: 
       objectReference: {fileID: 1843154310772158585, guid: e589702d33227c246bc846340ee77a89, type: 3}
+    - target: {fileID: 8539727483920524827, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
+      propertyPath: gunExistTime
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8539727483920524828, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
     - target: {fileID: 8539727483920524828, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b50f1499c3f4d6144803523257c86f5f, type: 3}
