@@ -25,11 +25,9 @@ public class itemHolder : MonoBehaviour
             else if(spawnRate > spawnTime)
             {
                 spawnRate = 0;
-                int percent = Random.Range(0, 5);
-                Debug.Log("percent: " + percent);
-                if (percent == 1)
+                int percent = Random.Range(0, 10);
+                if (percent < 4)
                 {
-                    Debug.Log("percent: " + percent);
                     Vector3 spawnPos = new Vector3(Random.Range(-4f, 0f), 8f, -8f);
                     Instantiate(item, spawnPos, gameObject.transform.rotation);
                     

@@ -52,7 +52,6 @@ public class bgloop : MonoBehaviour
 
             GameManager.Ins.Score++;
             GameUIManager.Ins.UpdateScoreCounting(GameManager.Ins.Score);
-            Debug.Log(GameManager.Ins.Score);
         }
     }
 }

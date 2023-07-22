@@ -2573,7 +2573,7 @@ MonoBehaviour:
   road2: {fileID: 1719846187}
   isStart: 0
   timeSpan: 0
-  delay: 5
+  delay: 7
 --- !u!1 &1349945533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,7 +3247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 6495123085707542055, guid: 5d3d8c1ac0e4b884e8cf257ed44229d5, type: 3}
   spawnRate: 0
-  spawnTime: 2
+  spawnTime: 1
 --- !u!4 &1677967404
 Transform:
   m_ObjectHideFlags: 0

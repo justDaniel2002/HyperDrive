@@ -12,6 +12,10 @@ public class playerControl : MonoBehaviour
     public double limitXright = 4;
     public double limitY = 6.04;
     public GameObject explosionVFX;
+    public GameObject bullet;
+    public float shootDelay;
+    public float shootTimeSpan;
+    public float gunExistTime;
 
     Rigidbody2D rbd;
     Animator animator;
@@ -20,6 +24,7 @@ public class playerControl : MonoBehaviour
     {
         rbd = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
+        gunExistTime = Const.GUN_EXIST_TIME;
     }
     // Start is called before the first frame update
     void Start()
@@ -93,6 +98,24 @@ public class playerControl : MonoBehaviour
             transform.position = new Vector3(transform.position.x, (float)-limitY, transform.position.z);
         }
 
+        //set up shooting bullet if armed
+        if (isArmed)
+        {
+            shootTimeSpan += Time.deltaTime;
+            gunExistTime -= Time.deltaTime;
+            if (gunExistTime < 0)
+            {
+                isArmed = false;
+                animator.SetBool("isArmed", isArmed);
+                gunExistTime = Const.GUN_EXIST_TIME;
+            }
+            else if (shootTimeSpan > shootDelay)
+            {
+                Instantiate(bullet, transform.position, Quaternion.identity);
+                shootTimeSpan = 0;
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -118,7 +141,8 @@ public class playerControl : MonoBehaviour
 
         if (collision.CompareTag(Const.ITEM_TAG))
         {
-            int itemType = Random.Range(0, 1);
+            int itemType = Random.Range(0, 2);
+            Debug.Log("item: " + itemType);
             if (itemType==0)
             {
                 isSheid = true;
@@ -128,6 +152,7 @@ public class playerControl : MonoBehaviour
             {
                 isArmed = true;
                 animator.SetBool("isArmed", isArmed);
+                gunExistTime = Const.GUN_EXIST_TIME;
                 Destroy(collision.gameObject);
             }
             
