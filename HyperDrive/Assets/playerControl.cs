@@ -111,7 +111,8 @@ public class playerControl : MonoBehaviour
             }
             else if (shootTimeSpan > shootDelay)
             {
-                Instantiate(bullet, transform.position, Quaternion.identity);
+                Vector3 spawPos = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z);
+                Instantiate(bullet, spawPos, Quaternion.identity);
                 shootTimeSpan = 0;
             }
         }
@@ -133,7 +134,6 @@ public class playerControl : MonoBehaviour
             collision.gameObject.SetActive(false);
 
             isDead = true;
-
             Instantiate(explosionVFX, transform.position, Quaternion.identity);
 
             GameManager.Ins.GameOver();
