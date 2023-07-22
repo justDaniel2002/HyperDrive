@@ -28,7 +28,7 @@ public class itemHolder : MonoBehaviour
                 int percent = Random.Range(0, 10);
                 if (percent < 4)
                 {
-                    Vector3 spawnPos = new Vector3(Random.Range(-4f, 0f), 8f, -8f);
+                    Vector3 spawnPos = new Vector3(Random.Range(-4f, 4f), 8f, 0f);
                     Instantiate(item, spawnPos, gameObject.transform.rotation);
                     
                 }
